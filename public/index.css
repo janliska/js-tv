@@ -1,3 +1,13 @@
 body {
   color: red;
 }
+
+.item {
+  border: 1px solid #ccc;
+  padding: 10px 20px;
+  margin: 5px;
+}
+
+.item.active {
+  border-color: #000;
+}

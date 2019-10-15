@@ -1,16 +1,14 @@
 import m from 'mithril';
 import '../public/index.css';
-import { Hello } from './components/Hello';
-import { Splash } from './components/Splash';
+import { getRoutes } from './services/routerFactory';
+import { routes } from './enums';
 
-m.route(document.getElementById('root'), '/splash', {
-  '/splash': Splash,
-  '/hello': Hello,
-});
+m.route(
+  document.getElementById('root'),
+  routes.SPLASH,
+  getRoutes()
+);
 
 window.setTimeout(() => {
-  // eslint-disable-next-line no-console
-  console.log('yep');
-  m.route.set('/hello');
+  m.route.set(routes.MENU);
 }, 5000);
-

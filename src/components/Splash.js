@@ -2,7 +2,7 @@ import m from 'mithril';
 
 const Splash = {
   view: function() {
-    return m('a', { href: '#!/hello' }, 'Enter');
+    return m('a', { href: '#!/menu' }, 'Enter');
   }
 };
 
