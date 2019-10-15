@@ -1,10 +1,12 @@
 import m from 'mithril';
 
-export const Hello = {
+const Hello = {
   view: function() {
     return m('main', [
-      m('h1', {class: 'title'}, 'My first app'),
+      m('h1', { class: 'title' }, 'My first app'),
       m('button', 'A button'),
     ]);
   }
 };
+
+export default Hello;
