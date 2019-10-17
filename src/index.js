@@ -8,7 +8,3 @@ m.route(
   routes.SPLASH,
   getRoutes()
 );
-
-window.setTimeout(() => {
-  m.route.set(routes.MENU);
-}, 5000);

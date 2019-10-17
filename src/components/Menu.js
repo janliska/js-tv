@@ -3,8 +3,8 @@ import { registerButton, unregisterButton } from '../services/keyboardController
 import { keys, routes } from '../enums';
 
 function Menu () {
-  let currentItem = null;
-  const items = [
+  let currentScreen = null;
+  const screens = [
     {
       title: 'Screen 1',
       route: routes.SCREEN1
@@ -20,31 +20,31 @@ function Menu () {
   ];
 
   const handleEnterScreen = () => {
-    if (currentItem === null) return;
-    m.route.set(items[currentItem].route);
+    if (currentScreen === null) return;
+    m.route.set(screens[currentScreen].route);
   };
 
   const handleUp = () => {
-    if (currentItem !== null && currentItem > 0) {
-      currentItem--;
+    if (currentScreen !== null && currentScreen > 0) {
+      currentScreen--;
     } else {
-      currentItem = items.length - 1;
+      currentScreen = screens.length - 1;
     }
     m.redraw();
   };
 
   const handleDown = () => {
-    if (currentItem !== null  && currentItem < items.length - 1) {
-      currentItem++;
+    if (currentScreen !== null  && currentScreen < screens.length - 1) {
+      currentScreen++;
     } else {
-      currentItem = 0;
+      currentScreen = 0;
     }
     m.redraw();
   };
 
   const getClassNames = item => {
     const baseClassName = 'item';
-    const activeClassName = (currentItem === item) ? 'active' : 'not-active';
+    const activeClassName = (currentScreen === item) ? 'active' : 'not-active';
     return `${baseClassName} ${activeClassName}`;
   };
 
@@ -60,7 +60,7 @@ function Menu () {
       unregisterButton(keys.DOWN);
     },
     view: () => m('main', [
-      items.map((item, i) => m('div', { class: getClassNames(i) }, item.title))
+      screens.map((item, i) => m('div', { class: getClassNames(i) }, item.title))
     ])
   };
 }

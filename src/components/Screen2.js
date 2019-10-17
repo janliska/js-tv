@@ -3,9 +3,7 @@ import { registerButton, unregisterButton } from '../services/keyboardController
 import { keys, routes } from '../enums';
 
 function Screen2() {
-  const handleReturn = () => {
-    m.route.set(routes.MENU);
-  };
+  const handleReturn = () => m.route.set(routes.MENU);
 
   return {
     oncreate: () => registerButton(keys.BACKSPACE, handleReturn),
