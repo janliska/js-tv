@@ -1,31 +1,36 @@
-body {
-  text-align: center;
-  font-family: sans-serif;
+html, body, #root {
+  width: 100%;
+  height: 100%;
   margin: 0;
 }
 
 #root {
   display: table;
-  margin: 0;
-  width: 100%;
-  height: 100%;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: bold;
+  background: #009407;
+  color: #fff;
 }
 
 main {
-  margin: 0 auto;
   display: table-cell;
   vertical-align: middle;
 }
 
-.item {
-  border: 2px solid #525252;
-  color: #525252;
-  padding: 10px 20px;
-  margin: 5px auto;
+img {
   width: 200px;
 }
 
+.item {
+  width: 200px;
+  border: 3px solid #fff;
+  margin: 5px auto;
+  padding: 10px 20px;
+  font-weight: bold;
+}
+
 .item.active {
-  background-color: #525252;
-  color: #fff;
+  background: #fff;
+  color: #009407;
 }
