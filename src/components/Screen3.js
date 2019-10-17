@@ -8,17 +8,9 @@ function Screen3() {
   };
 
   return {
-    oncreate: function() {
-      registerButton(keys.BACKSPACE, handleReturn);
-    },
-    onremove: function() {
-      unregisterButton(keys.BACKSPACE);
-    },
-    view: function() {
-      return m('main', [
-        m('p',  'Screen3')
-      ]);
-    }
+    oncreate: () => registerButton(keys.BACKSPACE, handleReturn),
+    onremove: () => unregisterButton(keys.BACKSPACE),
+    view: () => m('main', [ m('p',  'Screen 3') ])
   };
 }
 

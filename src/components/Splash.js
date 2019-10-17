@@ -1,9 +1,8 @@
 import m from 'mithril';
+import logo from '../../public/logo.png';
 
 const Splash = {
-  view: function() {
-    return m('a', { href: '#!/menu' }, 'Enter');
-  }
+  view: () => m('main', [ m('img', { src: logo }) ])
 };
 
 export default Splash;

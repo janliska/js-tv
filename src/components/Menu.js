@@ -49,21 +49,19 @@ function Menu () {
   };
 
   return {
-    oncreate: function() {
+    oncreate: () => {
       registerButton(keys.ENTER, handleEnterScreen);
       registerButton(keys.UP, handleUp);
       registerButton(keys.DOWN, handleDown);
     },
-    onremove: function() {
+    onremove: () => {
       unregisterButton(keys.ENTER);
       unregisterButton(keys.UP);
       unregisterButton(keys.DOWN);
     },
-    view: function() {
-      return m('main', [
-        items.map((item, i) => m('div', { class: getClassNames(i) }, item.title))
-      ]);
-    }
+    view: () => m('main', [
+      items.map((item, i) => m('div', { class: getClassNames(i) }, item.title))
+    ])
   };
 }
 
